@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -23,33 +22,34 @@
         #content {
             text-align: center;
             font-size: 3em;
-            position: relative; /* Importante per posizionare il testo rivelato */
-            z-index: 2; /* Assicura che il testo sia sopra l'esplosione */
+            position: relative;
+            z-index: 2;
         }
 
         #initial-text {
             transition: opacity 0.5s ease-out;
         }
 
-        /* Stile specifico per il testo rivelato */
+        /* Stile specifico per il testo rivelato (FALL GUYS) */
         .reveal-text {
             font-size: 4em;
-            color: #00aaff;
-            text-shadow: 0 0 15px #00aaff, 0 0 30px #00aaff;
+            color: #ffde00; /* Giallo brillante Fall Guys */
+            text-shadow: 0 0 15px #ff69b4, 0 0 30px #00c0ff; /* Ombra Rosa e Azzurra */
             opacity: 0; /* Inizialmente nascosto */
-            position: absolute; /* Sovrappone l'area dove era il testo iniziale */
+            position: absolute;
             top: 50%; 
             left: 50%;
             transform: translate(-50%, -50%);
-            transition: opacity 1s ease 0.5s; /* Appare lentamente dopo l'esplosione */
-            white-space: nowrap; /* Evita che il testo vada a capo */
+            transition: opacity 1s ease 0.5s;
+            white-space: nowrap;
         }
 
         .explosion {
-            position: fixed; /* Usa fixed per coprire l'intera finestra */
+            position: fixed;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(255, 165, 0, 0.8) 0%, rgba(255, 69, 0, 0.5) 50%, rgba(255, 0, 0, 0) 70%);
+            /* L'esplosione usa colori vivaci */
+            background: radial-gradient(circle, rgba(255, 255, 0, 0.9) 0%, rgba(255, 105, 180, 0.7) 50%, rgba(0, 192, 255, 0) 70%);
             opacity: 0;
             transform: scale(0);
             transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
@@ -65,7 +65,7 @@
 
     <div id="explosion-effect" class="explosion"></div>
     
-    <span id="reveal-text" class="reveal-text">TRACKMANIA</span>
+    <span id="reveal-text" class="reveal-text">FALL GUYS</span>
 
 
     <script>
@@ -88,9 +88,9 @@
                 initialText.style.opacity = '0'; 
 
                 // 2. Flash Bianco su tutto lo schermo e attivazione dell'esplosione
-                document.body.style.backgroundColor = '#fff';
+                document.body.style.backgroundColor = '#fff'; // Flash bianco
                 explosionEffect.style.opacity = '1';
-                explosionEffect.style.transform = 'scale(10)'; // Scala molto grande per coprire tutto
+                explosionEffect.style.transform = 'scale(10)'; 
                 
                 // 3. Ritorno rapido alla normalità dopo il flash
                 setTimeout(() => {
@@ -101,7 +101,7 @@
 
                 // --- FASE 3: RIVELAZIONE ---
 
-                // 4. Mostrare il testo "TRACKMANIA"
+                // 4. Mostrare il testo "FALL GUYS"
                 setTimeout(() => {
                     revealText.style.opacity = '1';
 
